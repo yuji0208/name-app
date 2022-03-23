@@ -1,0 +1,16 @@
+<h1>名前管理アプリ</h1>
+<%= form_tag("/create") do %>
+  <%= label_tag "名前" %>
+  <%= text_field :user, :name %>
+  <%= label_tag "年齢" %>
+  <%= text_field :user, :age %>
+  <%= label_tag "メールアドレス" %>
+  <%= text_field :user, :mail %>
+  <%= submit_tag "送信", class: "btn btn-primary" %>
+<% end %>
+<h1>ユーザー一覧</h1>
+<table class = "table">
+<% @users.each  do |user| %>
+  <tr><td><%= user.name%></td>, <td><%= user.age%></td>, <td><%= user.mail %></td></tr>
+<% end %>
+</table>
